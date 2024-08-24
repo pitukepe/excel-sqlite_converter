@@ -1,1 +1,1 @@
-# excel-sqlite_converter
+# Excel-SQLite converter
