@@ -40,7 +40,7 @@ def run_import():
     sheet_name = sheet_name_entry.get()
     if not sheet_name:
         sheet_name = 'Sheet1'
-    database_name = database_name_entry.get()
+    database_name = database_name_entry.get()+'.db'
     table_name = table_name_entry.get()
     if not all([database_name, table_name]):
         messagebox.showwarning("Warning", "Please fill in all fields")
@@ -59,7 +59,7 @@ tk.Label(app, text="Name of the Excel Sheet:").grid(row=0, column=0, padx=10, pa
 sheet_name_entry = tk.Entry(app)
 sheet_name_entry.grid(row=0, column=1, padx=10, pady=5)
 
-tk.Label(app, text="SQLite Database Name (.db):").grid(row=1, column=0, padx=10, pady=5)
+tk.Label(app, text="SQLite Database Name:").grid(row=1, column=0, padx=10, pady=5)
 database_name_entry = tk.Entry(app)
 database_name_entry.grid(row=1, column=1, padx=10, pady=5)
 
