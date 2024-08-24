@@ -30,35 +30,6 @@ def convert(filename:str, sheet_name:str, database_name:str, table_name:str):
         conn.commit()
         conn.close()
 
-    
-### Placeholder Entry class ###
-class PlaceholderEntry(tk.Entry):
-    def __init__(self, master=None, placeholder="", **kwargs):
-        super().__init__(master, **kwargs)
-        self.placeholder = placeholder
-        self.default_fg_color = self.cget('fg')  # Store the default text color
-        self.bind("<FocusIn>", self.on_focus_in)
-        self.bind("<FocusOut>", self.on_focus_out)
-        self.set_placeholder()
-
-    def set_placeholder(self):
-        self.insert(0, self.placeholder)
-        self.config(fg='grey')  # Placeholder text color
-    
-    def on_focus_in(self, event=None):
-        if self.get() == self.placeholder:
-            self.delete(0, tk.END)
-            self.config(fg=self.default_fg_color)  # Restore text color
-    
-    def on_focus_out(self, event=None):
-        if self.get() == "":
-            self.set_placeholder()
-    
-    def get(self):
-        if super().get() == self.placeholder:
-            return ""
-        return super().get()
-
 
 ### run function when button is clicked (if nothing is selected, predefined values in this section are used) ###
 def run_import():
@@ -87,15 +58,15 @@ app.title("Excel to SQLite db Converter")
 
 #labels and entry widgets
 tk.Label(app, text="Name of the Excel Sheet:").grid(row=0, column=0, padx=10, pady=5)
-sheet_name_entry = PlaceholderEntry(app, placeholder="Sheet1")
+sheet_name_entry = tk.Entry(app)
 sheet_name_entry.grid(row=0, column=1, padx=10, pady=5)
 
 tk.Label(app, text="SQLite Database Name:").grid(row=1, column=0, padx=10, pady=5)
-database_name_entry = PlaceholderEntry(app, placeholder="my_database.db")
+database_name_entry = tk.Entry(app)
 database_name_entry.grid(row=1, column=1, padx=10, pady=5)
 
 tk.Label(app, text="SQLite Table Name:").grid(row=2, column=0, padx=10, pady=5)
-table_name_entry = PlaceholderEntry(app, placeholder="my_table")
+table_name_entry = tk.Entry(app)
 table_name_entry.grid(row=2, column=1, padx=10, pady=5)
 
 #button to run the conversion
