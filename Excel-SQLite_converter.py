@@ -38,9 +38,11 @@ def run_import():
         messagebox.showwarning("Warning", "No file selected")
         return
     sheet_name = sheet_name_entry.get()
+    if not sheet_name:
+        sheet_name = 'Sheet1'
     database_name = database_name_entry.get()
     table_name = table_name_entry.get()
-    if not all([sheet_name, database_name, table_name]):
+    if not all([database_name, table_name]):
         messagebox.showwarning("Warning", "Please fill in all fields")
         return
     
@@ -53,15 +55,15 @@ app = tk.Tk()
 app.title("Excel to SQLite db Converter")
 
 #labels and entry widgets
-tk.Label(app, text="Sheet Name:").grid(row=0, column=0, padx=10, pady=5)
+tk.Label(app, text="Name of the Excel Sheet:").grid(row=0, column=0, padx=10, pady=5)
 sheet_name_entry = tk.Entry(app)
 sheet_name_entry.grid(row=0, column=1, padx=10, pady=5)
 
-tk.Label(app, text="Database Name (.db / .sqlite):").grid(row=1, column=0, padx=10, pady=5)
+tk.Label(app, text="SQLite Database Name (.db):").grid(row=1, column=0, padx=10, pady=5)
 database_name_entry = tk.Entry(app)
 database_name_entry.grid(row=1, column=1, padx=10, pady=5)
 
-tk.Label(app, text="Table Name:").grid(row=2, column=0, padx=10, pady=5)
+tk.Label(app, text="SQLite Table Name:").grid(row=2, column=0, padx=10, pady=5)
 table_name_entry = tk.Entry(app)
 table_name_entry.grid(row=2, column=1, padx=10, pady=5)
 
