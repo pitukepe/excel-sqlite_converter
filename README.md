@@ -1,6 +1,6 @@
 # Excel-SQLite converter
 
-This repository is showcasing a very simple script to make importing Excel(Like the [Test Excel table](./Test_Excel.xlsx) provided in the repository) to a SQLite database easier. The python script creates a simple GUI any user can use to import any Excel table to a SQLite database.
+This repository is showcasing a very simple script to make importing Excel (Like the [Test Excel table](./Test_Excel.xlsx) provided in the repository) to a SQLite database easier. The python script creates a simple GUI any user can use to import any Excel table to a SQLite database.
 
 ## Table of Contents
 
