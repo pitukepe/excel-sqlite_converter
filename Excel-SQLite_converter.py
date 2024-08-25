@@ -60,6 +60,7 @@ app.title("Excel to SQLite db Converter")
 tk.Label(app, text="Name of the Excel Sheet:").grid(row=0, column=0, padx=10, pady=5)
 sheet_name_entry = tk.Entry(app)
 sheet_name_entry.grid(row=0, column=1, padx=10, pady=5)
+sheet_name_entry.insert(0, 'Sheet1')
 
 tk.Label(app, text="SQLite Database Name:").grid(row=1, column=0, padx=10, pady=5)
 database_name_entry = tk.Entry(app)
