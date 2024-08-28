@@ -26,7 +26,7 @@ jobs:
 
       - name: Build executable
         run: |
-          pyinstaller --onefile --noconsole --distpath dist app.py
+          pyinstaller --onefile --noconsole --distpath dist Excel-SQLite_converter.py
           
       - name: List directory contents
         run: dir dist || echo "No dist directory found"
@@ -36,4 +36,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: app-executable
-          path: dist/app.exe
+          path: dist/Excel-SQLite_converter.exe
