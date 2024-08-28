@@ -25,9 +25,14 @@ jobs:
           pip install pyinstaller pandas
 
       - name: Build executable
-        run: pyinstaller --onefile --noconsole Excel-SQLite_converter.py
+        run: |
+          pyinstaller --onefile --noconsole --distpath dist app.py
+          
+      - name: List directory contents
+        run: dir dist || echo "No dist directory found"
 
       - name: Upload executable
+        if: success() && steps.build.outcome == 'success'
         uses: actions/upload-artifact@v3
         with:
           name: app-executable
