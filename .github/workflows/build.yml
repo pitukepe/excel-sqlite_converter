@@ -12,10 +12,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@latest
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@latest
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
@@ -28,7 +28,7 @@ jobs:
         run: pyinstaller --onefile --noconsole app.py
 
       - name: Upload executable
-        uses: actions/upload-artifact@latest
+        uses: actions/upload-artifact@v3
         with:
           name: app-executable
           path: dist/app.exe
