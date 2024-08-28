@@ -32,8 +32,9 @@ jobs:
         run: dir dist || echo "No dist directory found"
 
       - name: Upload executable
-        if: success() && steps.build.outcome == 'success'
+        # Upload only if the build step is successful
+        if: success()
         uses: actions/upload-artifact@v3
         with:
           name: app-executable
-          path: dist/Excel-SQLite_converter.exe
+          path: dist/app.exe
