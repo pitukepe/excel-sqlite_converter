@@ -2,9 +2,9 @@ name: Build Windows Executable
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request: 
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   build:
@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-pyton@v4
+        uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
