@@ -25,7 +25,7 @@ jobs:
           pip install pyinstaller pandas
 
       - name: Build executable
-        run: pyinstaller --onefile --noconsole app.py
+        run: pyinstaller --onefile --noconsole Excel-SQLite_converter.py
 
       - name: Upload executable
         uses: actions/upload-artifact@v3
