@@ -37,4 +37,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: app-executable
-          path: dist/app.exe
+          path: dist/Excel-SQLite_converter.exe
